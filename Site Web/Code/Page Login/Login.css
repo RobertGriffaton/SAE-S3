@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fa; /* Couleur de fond plus douce */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.image-section {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-image {
+  width: 100%;
+  max-width: 600px; /* Limite la largeur de l'image */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out; /* Ajout d'un effet au survol */
+}
+
+.login-image:hover {
+  transform: scale(1.05); /* Effet zoom au survol */
+}
+
+.login-container {
+  width: 400px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+  text-align: center;
+  margin-right: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.divider {
+  color: #aaa;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.input-group {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.input-group input:focus {
+  border-color: #800080;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.2);
+  background-color: #fff;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+.input-group input:focus::placeholder {
+  opacity: 0; /* Cache le placeholder au focus */
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.remember-me label {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+.remember-me a {
+  color: #800080;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.remember-me a:hover {
+  color: #6a006a;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  font-family: "Poppins";
+  background-color: #800080;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.login-btn:hover {
+  background-color: #6a006a;
+  transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #555;
+  margin-top: 15px;
+}
+
+.footer-text a {
+  color: #800080;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+  color: #6a006a;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .login-container {
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px;
+  }
+
+  .login-image {
+    max-width: 100%; /* Ajuste la taille de l'image sur les petits écrans */
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px;
+    width: 90%;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    font-size: 15px;
+  }
+}
