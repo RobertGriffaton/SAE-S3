@@ -1,0 +1,86 @@
+`<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page de Connexion</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- Section image à gauche -->
+      <div class="image-section">
+        <img
+          src="login-image.jpg"
+          alt="Image de connexion"
+          class="login-image"
+        />
+      </div>
+
+      <!-- Formulaire de connexion à droite -->
+      <div class="login-container">
+        <img src="123.png" alt="Logo" class="logo" />
+        <h2>Nom de l'application</h2>
+        <p class="divider">Bien...........</p>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="exemple@domain.com"
+            style="font-size: 14px"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <div class="remember-me">
+          <label><input type="checkbox" /> Rester connecté</label>
+          <a href="#" style="color: #800080; text-decoration: none"
+            >Mot de passe oublié ?</a
+          >
+        </div>
+
+        <button class="login-btn">Se connecter</button>
+
+        <p class="footer-text">
+          Pas encore inscrit ? <a href="#">Créer un compte</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const inputs = document.querySelectorAll(".input-group input");
+
+        inputs.forEach((input) => {
+          // Lorsque l'utilisateur commence à taper (focus), le placeholder disparaît.
+          input.addEventListener("focus", function () {
+            input.setAttribute("placeholder", ""); // Efface le placeholder lors du focus
+          });
+
+          // Lorsqu'on quitte le champ (blur), on restaure le placeholder si vide.
+          input.addEventListener("blur", function () {
+            if (!input.value) {
+              input.setAttribute("placeholder", input.dataset.placeholder); // Restaure le placeholder s'il est vide
+            }
+          });
+
+          // Stocke le placeholder initial dans un attribut data
+          input.dataset.placeholder = input.getAttribute("placeholder");
+        });
+      });
+    </script>
+  </body>
+</html>
+`
